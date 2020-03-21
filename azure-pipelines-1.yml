@@ -12,7 +12,7 @@ variables:
   azureSubscription: 'e02778ae-9f35-4a23-a858-b39af685badf'
   
   # Web app name
-  webAppName: ''
+  webAppName: 'FirstWebApp'
 
   # Environment name
   environmentName: 'Nawnit'
