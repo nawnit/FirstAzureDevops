@@ -27,6 +27,7 @@ pipeline {
 		}
 		stage('Deployment') {
 	    	steps {
+               			sh 'sshpass -p "1234" ssh nawnit@172.17.0.3 "JAVA_HOME=/home/nawnit/Distros/jdk1.8.0_241" "/home/nawnit/Distros/apache-tomcat-8.5.53/bin/shutdown.sh"'
 				print "Deployment is done!"
 				sh 'sshpass -p "1234" scp target/gamutkart.war nawnit@172.17.0.3:/home/nawnit/Distros/apache-tomcat-8.5.53/webapps'
 				sh 'sshpass -p "1234" ssh nawnit@172.17.0.3 "JAVA_HOME=/home/nawnit/Distros/jdk1.8.0_241" "/home/nawnit/Distros/apache-tomcat-8.5.53/bin/startup.sh"'
